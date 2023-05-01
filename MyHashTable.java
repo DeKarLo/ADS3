@@ -90,6 +90,13 @@ public class MyHashTable <K, V> {
     }
 
     public K getKey(V value) {
+        for (int i = 0; i < M; i++) {
+            HashNode<K, V> cursor = chainArray[i];
+            while (cursor != null) {
+                if (cursor.value.equals(value)) return cursor.key;
+                cursor = cursor.next;
+            }
+        }
         return null;
     }
 
