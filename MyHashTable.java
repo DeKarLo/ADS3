@@ -20,9 +20,9 @@ public class MyHashTable <K, V> {
     private int size;
 
     public MyHashTable() {
-        this.M = 11;
+        this.M = M;
         this.size = 0;
-        this.chainArray = new HashNode[11];
+        this.chainArray = new HashNode[M];
     }
 
     public MyHashTable(int M) {
@@ -32,7 +32,7 @@ public class MyHashTable <K, V> {
     }
 
     private int hash(K key) {
-        return 0;
+        return key.hashCode() % M;
     }
 
     public void put(K key, V value) {
