@@ -27,9 +27,8 @@ class MyTestingClass {
         return hash;
     }
 
-    // Custom equals method that compares the id and name fields
     @Override
-    public boolean equals(Object obj) {
-        return false;
+    public String toString() {
+        return "{" + id + ": " + name + "}";
     }
 }
