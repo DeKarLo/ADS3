@@ -19,6 +19,14 @@ public class MyHashTable <K, V> {
     private int M = 11;
     private int size;
 
+    public int getM() {
+        return M;
+    }
+
+    public int getSize() {
+        return size;
+    }
+
     public MyHashTable() {
         this.M = M;
         this.size = 0;
@@ -98,6 +106,16 @@ public class MyHashTable <K, V> {
             }
         }
         return null;
+    }
+
+    public int getBucketSize(int i){
+        int size = 0;
+        HashNode<K, V> cursor = chainArray[i];
+        while (cursor != null) {
+            size++;
+            cursor = cursor.next;
+        }
+        return size;
     }
 
 
